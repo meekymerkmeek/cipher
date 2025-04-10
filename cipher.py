@@ -32,11 +32,11 @@ def rail_fence_encode(string, key):
 
     for char in string:
         rails[rail] += char
-        if rail == 0 or rail == key - 1:
+        if rail in (0, key -1):
             direction *= -1
         rail += direction
     return "".join(rails)
-        
+
 def rail_fence_decode(string, key):
     """
     pre: string is a string of characters and key is a positive
@@ -52,7 +52,7 @@ def rail_fence_decode(string, key):
 
     for i in range(len(string)):
         pattern[i] = rail
-        if rail == 0 or rail == key - 1:
+        if rail in (0, key -1):
             direction *= -1
         rail += direction
 
@@ -88,8 +88,7 @@ def filter_string(string):
         if char.isalpha():
             result += char.lower()
     return result
-            
-            
+       
 def encode_character(p, s):
     """
     pre: p is a character in the pass phrase and s is a character
@@ -102,7 +101,6 @@ def encode_character(p, s):
     encoded = (s_index + p_index) % 26
 
     return chr(encoded + ord("a"))
-    
 
 def decode_character(p, s):
     """
@@ -127,14 +125,10 @@ def vigenere_encode(string, phrase):
     string = filter_string(string)
     phrase = filter_string(phrase)
     result = ""
-    
-    for i in range(len(string)):
-        s_char = string[i]
+    for i, s_char in enumerate(string):
         p_char = phrase[i % len(phrase)]
         result += encode_character(p_char, s_char)
-        
     return result
-        
 
 def vigenere_decode(string, phrase):
     """
@@ -146,8 +140,7 @@ def vigenere_decode(string, phrase):
     phrase = filter_string(phrase)
     result = ""
 
-    for i in range(len(string)):
-        s_char = string[i]
+    for i, s_char in enumerate(string):
         p_char = phrase[i % len(phrase)]
         result += decode_character(p_char, s_char)
 
@@ -178,7 +171,6 @@ def main():
     # read the pass phrase from stdin (terminal/input)
 
     # decrypt and print the plain text using Vigenere cipher
-    
     print("Rail Fence Cipher\n")
 
     plain_text_rf = input("Plain Text: ").strip()
@@ -207,11 +199,6 @@ def main():
     filtered_pass = filter_string(decode_phrase)
     decoded_v = vigenere_decode(encoded_text_v, filtered_pass)
     print("Decoded Text: ", decoded_v)
-    
-    
-
-    
-  
 
 
 # Do NOT modify the following code.
