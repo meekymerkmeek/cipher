@@ -153,8 +153,6 @@ def vigenere_decode(string, phrase):
 
     return result
 
-
-# TODO: implement this function. You may delete this comment after you are done.
 def main():
     """Main function that reads stdin and runs each cipher"""
     # read the plain text from stdin (terminal/input)
