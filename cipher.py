@@ -172,9 +172,7 @@ def main():
     # decrypt and print the plain text using Vigenere cipher
     print("Rail Fence Cipher\n")
 
-    print("Plain Text:", end="")
     plain_text_rf = input().strip()
-    print("Key:", end="")
     key_rf = int(input())
     encoded_rf = rail_fence_encode(plain_text_rf, key_rf)
     print("Plain Text:", plain_text_rf)
@@ -182,9 +180,7 @@ def main():
     print("Encoded Text:", encoded_rf)
     print()
 
-    print("Encoded Text:", end="")
     encoded_text_rf = input().strip()
-    print("Enter Key:", end="")
     decode_key_rf = int(input())
     decoded_rf = rail_fence_decode(encoded_text_rf, decode_key_rf)
     print("Encoded Text:", encoded_text_rf)
@@ -194,9 +190,7 @@ def main():
 
     print("Vigenere Cipher\n")
 
-    print("Plain Text:", end="")
     plain_text_v = input().strip()
-    print("Pass Phrase:", end="")
     encode_phrase = input().strip()
     encoded_v = vigenere_encode(plain_text_v, encode_phrase)
     print("Plain Text:", plain_text_v)
@@ -204,9 +198,7 @@ def main():
     print("Encoded Text:", encoded_v)
     print()
 
-    print("Encoded Text:", end="")
     encoded_text_v = input().strip()
-    print("Pass Phrase:", end="")
     decode_phrase = input().strip()
     decoded_v = vigenere_decode(encoded_text_v, decode_phrase)
     print("Encoded Text:", encoded_text_v)
