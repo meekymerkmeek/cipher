@@ -172,41 +172,33 @@ def main():
     # decrypt and print the plain text using Vigenere cipher
     print("Rail Fence Cipher\n")
 
-    print("Plain Text:", end="")
-    plain_text_rf = input().strip()
-    print("Key:", end="")
-    key_rf =int(input())
+    plain_text_rf = input("Plain Text: ").strip()
+    key_rf =int(input("Key: "))
     encoded_rf = rail_fence_encode(plain_text_rf, key_rf)
-    print(f"Encoded Text:{encoded_rf}")
+    print("Encoded Text: ", encoded_rf)
     print()
-    
-    print("Encoded Text:", end="")
-    encoded_text_rf = input().strip()
-    print("Key:", end="")
-    decode_key_rf = int(input())
+
+    encoded_text_rf = input("Encoded Text: ").strip()
+    decode_key_rf = int(input("Enter Key: "))
     decoded_rf = rail_fence_decode(encoded_text_rf, decode_key_rf)
-    print(f"Decoded Text:{decoded_rf}")
+    print("Decoded Text: ", decoded_rf)
     print()
 
     print("Vigenere Cipher\n")
-
-    print("Plain Text:", end="")
-    plain_text_v = input().strip()
-    print("Pass Phrase:", end="")
-    encode_phrase = input().strip()
-    #filtered_plain = filter_string(plain_text_v)
-    #filtered_phrase = filter_string(encode_phrase)
-    encoded_v = vigenere_encode(plain_text_v, encode_phrase)
-    print(f"Encoded Text:{encoded_v}")
+    plain_text_v = input("Plain Text: ").strip()
+    encode_phrase = input("Pass Phrase: ").strip()
+    filtered_plain = filter_string(plain_text_v)
+    filtered_phrase = filter_string(encode_phrase)
+    encoded_v = vigenere_encode(filtered_plain, filtered_phrase)
+    print("Encoded Text: ", encoded_v)
     print()
 
-    print("Encoded Text:", end="")
-    encoded_text_v = input().strip()
-    print("Pass Phrase:", end="")
-    decode_phrase = input().strip()
-    #filtered_pass = filter_string(decode_phrase)
-    decoded_v = vigenere_decode(encoded_text_v, decode_phrase)
-    print(f"Decoded Text:{decoded_v}")
+    encoded_text_v = input("Encoded Text: ").strip()
+    decode_phrase = input("Pass Phrase: ").strip()
+    filtered_pass = filter_string(decode_phrase)
+    decoded_v = vigenere_decode(encoded_text_v, filtered_pass)
+    print("Decoded Text: ", decoded_v)
+
 
 
 # Do NOT modify the following code.
