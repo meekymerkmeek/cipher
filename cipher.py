@@ -177,7 +177,7 @@ def main():
     print("Key:", end="")
     key_rf =int(input())
     encoded_rf = rail_fence_encode(plain_text_rf, key_rf)
-    print("Encoded Text:", encoded_rf)
+    print(f"Encoded Text:{encoded_rf}")
     print()
     
     print("Encoded Text:", end="")
@@ -185,7 +185,7 @@ def main():
     print("Key:", end="")
     decode_key_rf = int(input())
     decoded_rf = rail_fence_decode(encoded_text_rf, decode_key_rf)
-    print("Decoded Text:", decoded_rf)
+    print(f"Decoded Text:{decoded_rf}")
     print()
 
     print("Vigenere Cipher\n")
@@ -197,7 +197,7 @@ def main():
     #filtered_plain = filter_string(plain_text_v)
     #filtered_phrase = filter_string(encode_phrase)
     encoded_v = vigenere_encode(plain_text_v, encode_phrase)
-    print("Encoded Text:", encoded_v)
+    print(f"Encoded Text:{encoded_v}")
     print()
 
     print("Encoded Text:", end="")
@@ -206,7 +206,7 @@ def main():
     decode_phrase = input().strip()
     #filtered_pass = filter_string(decode_phrase)
     decoded_v = vigenere_decode(encoded_text_v, decode_phrase)
-    print("Decoded Text:", decoded_v)
+    print(f"Decoded Text:{decoded_v}")
 
 
 # Do NOT modify the following code.
