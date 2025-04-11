@@ -87,8 +87,7 @@ def filter_string(string):
     for char in string:
         if char.isalpha():
             result += char.lower()
-    return result
-       
+    return result 
 def encode_character(p, s):
     """
     pre: p is a character in the pass phrase and s is a character
